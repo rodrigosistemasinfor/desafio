@@ -1,0 +1,48 @@
+<div class="row mb-2">
+    <div class="col-12 text-center">
+        <div class="h4 mb-1 mt-3 text-info">Novo Usuario</div>
+        <hr class="mb-2"/>
+    </div>
+</div>
+<div class="row mb-2">
+  <div class="col-12 text-right">
+    <a [routerLink]="['/home']" class="btn btn-primary">
+        Voltar
+    </a>
+  </div>
+</div>
+<div class="row">
+  <div class="col-12">
+     <form class="row" (submit)="salvar()">
+      <div class="form-group col-6">
+        <label for="nome">Nome:</label>
+        <input type="text" class="form-control" [(ngModel)]="user.Nome" [ngModelOptions]="{standalone: true}">
+      </div>
+      <div class="form-group col-6">
+        <label for="nome">CPF:</label>
+        <input type="text" class="form-control" [(ngModel)]="user.CPF" [ngModelOptions]="{standalone: true}">
+      </div>
+      <div class="form-group col-6">
+        <label for="nome">RG:</label>
+        <input type="text" class="form-control" [(ngModel)]="user.RG" [ngModelOptions]="{standalone: true}">
+      </div>
+      <div class="form-group col-6">
+        <label for="nome">Data Nacimento:</label>
+        <input type="date" class="form-control" [(ngModel)]="user.DataNacimento" [ngModelOptions]="{standalone: true}">
+      </div>
+      <div class="form-group col-6">
+        <label for="nome">Mãe:</label>
+        <input type="text" class="form-control" [(ngModel)]="user.NomeMae" [ngModelOptions]="{standalone: true}">
+      </div>
+      <div class="form-group col-6">
+        <label for="nome">Pai:</label>
+        <input type="text" class="form-control" [(ngModel)]="user.NomePai" [ngModelOptions]="{standalone: true}">
+      </div>
+      <div class="form-group col-10">
+          <button class="btn btn-primary" type="submit">
+              Salvar
+          </button>
+      </div>
+     </form>
+  </div>
+</div>

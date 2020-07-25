@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  desafioapp.presentation.ui:
+    image: ${DOCKER_REGISTRY-}desafioapppresentationui
+    build:
+     context: .
+     dockerfile: Source/Presentation/DesafioApp.Presentation.UI/Dockerfile

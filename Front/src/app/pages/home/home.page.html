@@ -1,0 +1,62 @@
+<div class="row mb-2">
+    <div class="col-12 text-center">
+        <div class="h4 mb-3 mt-4 text-info">Usuários</div>
+    </div>
+    <hr class="mb-2">
+    <div class="col-12 mb-2">
+      <div class="row">
+          <div class="col-12 h5">
+            Filtros
+          </div>
+          <div class="form-group col-3">
+            <label for="nome">Nome:</label>
+            <input type="text" class="form-control" [(ngModel)]="seletorFiltros.Nome" [ngModelOptions]="{standalone: true}">
+          </div>
+          <div class="form-group col-3">
+            <label for="nome">CPF:</label>
+            <input type="text" class="form-control" [(ngModel)]="seletorFiltros.CPF" [ngModelOptions]="{standalone: true}">
+          </div>
+          <div class="form-group col-3">
+            <label for="nome">RG:</label>
+            <input type="text" class="form-control" [(ngModel)]="seletorFiltros.RG" [ngModelOptions]="{standalone: true}">
+          </div>
+          <div class="form-group col-12">
+            <button class="btn btn-primary" (click)="getUsers()">
+              Buscar
+            </button>
+            <button class="btn btn-danger ml-2" (click)="deletar()">
+              Deletar
+            </button>
+            <a class="btn btn-primary ml-2"  [routerLink]="['/cadastro']">
+              Novo
+            </a>
+        </div>
+      </div>
+    </div>
+</div>
+<div class="row mb-2">
+  <td class="col-12">
+    <table class="table table-striped table-bordered">
+      <thead> 
+        <th class="text-center">Nome</th>
+        <th class="text-center">CPF</th>
+        <th class="text-center">RG</th>
+        <th class="text-center">Data Nacimento</th>
+        <th class="text-center">Nome Mae</th>
+        <th class="text-center">Nome Pai</th>
+        <th class="text-center">Data Cadastro</th>
+      </thead>
+      <tbody>
+         <tr *ngFor="let item of listaUsers;">
+           <td>{{item.Nome}}</td>
+           <td>{{item.CPF}}</td>
+           <td>{{item.RG}}</td>
+           <td>{{item.DataNacimento | date: 'dd/MM/yyyy'}}</td>
+           <td>{{item.NomeMae}}</td>
+           <td>{{item.NomePai}}</td>
+           <td>{{item.DataCadastro | date: 'dd/MM/yyyy'}}</td>
+         </tr>   
+      </tbody>
+   </table>
+  </td>
+</div>
